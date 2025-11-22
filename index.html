@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Daily Deals – Die besten Angebote des Tages</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Täglich aktualisierte Deals mit kurzen Artikeln und Affiliate-Links von verschiedenen Plattformen.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="#top" class="logo">Daily<span>Deals</span></a>
+
+      <nav class="main-nav">
+        <a href="#deals">Alle Deals</a>
+        <a href="#how-it-works">So funktioniert’s</a>
+        <a href="#newsletter">Newsletter</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero / Intro -->
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="hero-text">
+          <h1>Die stärksten Deals des Tages – <span>kurz erklärt, direkt verlinkt</span>.</h1>
+          <p>
+            Jeden Tag die besten Angebote aus verschiedenen Shops und Plattformen.
+            Kurz eingeordnet, mit ehrlichem Mehrwert und direktem Link zum Deal.
+          </p>
+          <div class="hero-actions">
+            <a href="#deals" class="btn primary">Zu den Deals</a>
+            <a href="#how-it-works" class="btn secondary">Wie wir Deals auswählen</a>
+          </div>
+          <p class="hero-note" id="dealCountNote"></p>
+        </div>
+
+        <aside class="hero-panel">
+          <h2>Filter</h2>
+          <div class="filters">
+            <div class="filter-block">
+              <h3>Kategorien</h3>
+              <div id="categoryFilters" class="filter-chips"></div>
+            </div>
+            <div class="filter-block">
+              <h3>Plattformen</h3>
+              <div id="platformFilters" class="filter-chips"></div>
+            </div>
+            <div class="filter-block">
+              <h3>Sortierung</h3>
+              <select id="sortSelect" class="select">
+                <option value="hot">🔥 Beliebteste zuerst</option>
+                <option value="newest">Neueste zuerst</option>
+                <option value="saving">Größte Ersparnis</option>
+              </select>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Deal-Liste -->
+    <section id="deals" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Deals des Tages</h2>
+          <p class="section-intro">
+            Alle Angebote werden von uns redaktionell ausgewählt. Preise und Verfügbarkeiten
+            können sich kurzfristig ändern – prüfe vor Kauf immer den finalen Preis im Shop.
+          </p>
+        </div>
+
+        <div id="dealList" class="deal-list">
+          <!-- Deals werden per JavaScript eingefügt -->
+        </div>
+
+        <p id="noDealsMessage" class="no-deals hidden">
+          Für die aktuelle Filterkombination wurden keine Deals gefunden.
+          Setze die Filter zurück, um wieder alle Angebote zu sehen.
+        </p>
+      </div>
+    </section>
+
+    <!-- So funktioniert's -->
+    <section id="how-it-works" class="section section-alt">
+      <div class="container two-col">
+        <div>
+          <h2>So wählen wir die Deals aus</h2>
+          <p>
+            Alle Angebote auf dieser Seite werden manuell geprüft. Wir achten insbesondere auf:
+          </p>
+          <ul>
+            <li>Deutliche Ersparnis gegenüber Normalpreis / Idealo-Bestpreis</li>
+            <li>Seriöse Händler & bekannte Plattformen</li>
+            <li>Kein „Scheinrabatt“ durch UVP-Trickserei</li>
+            <li>Realistische Verfügbarkeit</li>
+          </ul>
+          <p class="small">
+            Hinweis: Bei einigen Links handelt es sich um Affiliate-Links. Wenn du darüber
+            kaufst, erhalten wir eine kleine Provision – für dich bleibt der Preis gleich.
+          </p>
+        </div>
+        <div class="info-card">
+          <h3>Transparenz & Disclaimer</h3>
+          <p>
+            Preise, Verfügbarkeit und Konditionen können sich jederzeit ändern.
+            Alle Angaben ohne Gewähr. Prüfe Angebote immer direkt im Shop,
+            bevor du eine Kaufentscheidung triffst.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter / Call to Action -->
+    <section id="newsletter" class="section">
+      <div class="container two-col">
+        <div>
+          <h2>Top-Deals per Mail</h2>
+          <p>
+            Du willst keine starken Angebote mehr verpassen? Trag dich in unseren
+            (Demo-)Newsletter ein. Du kannst dich jederzeit wieder austragen.
+          </p>
+          <form id="newsletterForm" class="newsletter-form">
+            <label>
+              E-Mail-Adresse
+              <input type="email" name="email" required placeholder="deine@mail.de">
+            </label>
+            <button type="submit" class="btn primary">Anmelden</button>
+            <p id="newsletterStatus" class="form-status"></p>
+          </form>
+        </div>
+        <div class="info-card">
+          <h3>Datenschutz-Hinweis</h3>
+          <p class="small">
+            Dieses Formular ist aktuell nur ein Frontend-Dummy – die Daten werden
+            nicht gespeichert oder verarbeitet. In der Live-Version solltest du
+            hier deinen E-Mail-Dienst / Provider (z.B. Mailchimp, Sendinblue, eigene Lösung)
+            anbinden und eine DSGVO-konforme Datenschutzerklärung verlinken.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>© <span id="year"></span> DailyDeals. Alle Angaben ohne Gewähr.</p>
+      <div class="footer-links">
+        <a href="#top">Nach oben</a>
+        <!-- Impressum / Datenschutz später ergänzen -->
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
